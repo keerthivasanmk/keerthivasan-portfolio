@@ -25,8 +25,8 @@ export default function ContactUs() {
         e.preventDefault();
         setloader(true);
         emailjs
-            .sendForm('service_hq3hqw1', 'template_g90jp1e', formRef.current, {
-                publicKey: 'ouqmLneHLyy5bSF-r',
+            .sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formRef.current, {
+                publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
             })
             .then(
                 () => {
@@ -93,7 +93,7 @@ export default function ContactUs() {
                             </textarea>
                             <button
                                 type="submit"
-                                class="bg-black text-white inline-block w-full rounded p-2 flex justify-center gap-3 items-center"
+                                class="button w-full rounded flex justify-center gap-3 items-center"
                             >
                                 {loader ? <div class="loader"></div> : 'Send'}
                             </button>

@@ -109,5 +109,9 @@ body {
 }
 
 .button {
-  @apply bg-black text-white inline-block rounded p-2 font-bold;
+  @apply bg-black text-white rounded p-2 font-bold  border-2 border-transparent border-solid duration-300;
+}
+
+.button:hover {
+  @apply text-black bg-white border-2 border-black border-solid;
 }

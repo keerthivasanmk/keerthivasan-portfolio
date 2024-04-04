@@ -26,7 +26,7 @@ export default function About() {
                 <div className='w-1/2 p-5 text-white about-main-content max-w-[600px] m-auto'>
                     <p>I&apos;m Keerthivasan, Skilled Frontend Developer with nearly 3 years of experience in delivering the output with quality code in a stipulated time.</p>
                     <p>I excel in app development with <strong className='text-black'>React js, Redux, Next js and Wordpress CMS</strong> ensuring efficient and dynamic web experiences.</p>
-                    <a href='/Keerthivasan_resume.pdf' className='button mt-5' download>
+                    <a href='/Keerthivasan_resume.pdf' className='button inline-block mt-5' download>
                         Download Resume
                     </a>
                 </div>
