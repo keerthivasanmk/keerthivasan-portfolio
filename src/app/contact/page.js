@@ -94,6 +94,7 @@ export default function ContactUs() {
                             <button
                                 type="submit"
                                 class="button w-full rounded flex justify-center gap-3 items-center"
+                                disabled={loader}
                             >
                                 {loader ? <div class="loader"></div> : 'Send'}
                             </button>
