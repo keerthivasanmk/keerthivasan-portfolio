@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #3aafa9;
+  --background-start-rgb: #3a83af;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -18,11 +18,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: 
+  background:
     var(--background-start-rgb);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 * {
@@ -36,7 +36,7 @@ body {
 }
 
 .title {
-  @apply text-white font-bold text-3xl;
+  @apply text-white font-bold text-3xl tablet:text-xl;
 }
 
 .title-2 {
@@ -52,7 +52,7 @@ body {
 }
 
 .child-container {
-  @apply flex-grow w-full py-10;
+  @apply flex-grow w-full py-10 tablet:py-0;
 }
 
 .about-main-content {
@@ -73,13 +73,23 @@ body {
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .snackbar {
@@ -89,27 +99,55 @@ body {
 }
 
 @-webkit-keyframes fadein {
-  from {top: 0; opacity: 0;} 
-  to {top: 35px; opacity: 1;}
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 35px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {top: 0; opacity: 0;}
-  to {top: 35px; opacity: 1;}
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 35px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {top: 35px; opacity: 1;} 
-  to {top: 0; opacity: 0;}
+  from {
+    top: 35px;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {top: 35px; opacity: 1;}
-  to {top: 0; opacity: 0;}
+  from {
+    top: 35px;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
 
 .button {
-  @apply bg-black text-white rounded p-2 font-bold  border-2 border-transparent border-solid duration-300;
+  @apply bg-black text-white rounded p-2 font-bold border-2 border-transparent border-solid duration-300;
 }
 
 .button:hover {

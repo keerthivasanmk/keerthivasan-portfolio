@@ -1,31 +1,31 @@
-import linkedIn from '../app/images/linkedin.png';
-import github from '../app/images/github.png';
-import mail from '../app/images/email.png';
-import instagram from '../app/images/instagram.png';
-import reactIcon from '../app/images/react-icon.svg';
-import nextjsIcon from '../app/images/nextjs-icon.svg';
-import javascriptIcon from '../app/images/javascript-icon.svg';
-import reduxIcon from '../app/images/redux-icon.svg';
-import htmlIcon from '../app/images/html-icon.svg';
-import cssIcon from '../app/images/css-icon.svg';
-import tailwindIcon from '../app/images/tailwind-css-icon.svg';
-import sassIcon from '../app/images/sass-icon.svg';
-import wordpressIcon from '../app/images/wordpress-icon.svg';
-import gitIcon from '../app/images/git-icon.svg';
-import jqueryIcon from '../app/images/jquery-icon.svg';
-import bootstrapIcon from '../app/images/bootstrap-icon.svg';
-import antDesignIcon from '../app/images/ant-design-icon.svg';
-import webpackIcon from '../app/images/webpack-icon.svg';
-import bitbucketIcon from '../app/images/bitbucket-icon.svg';
-import sourcetreeIcon from '../app/images/sourcetree-icon.svg';
-import zohosprintsIcon from '../app/images/zoho-icon.svg';
-import sketchIcon from '../app/images/sketch-icon.svg';
+import linkedIn from '@/images/linkedin.png';
+import github from '@/images/github.png';
+import mail from '@/images/email.png';
+import instagram from '@/images/instagram.png';
+import reactIcon from '@/images/react-icon.svg';
+import nextjsIcon from '@/images/nextjs-icon.svg';
+import javascriptIcon from '@/images/javascript-icon.svg';
+import reduxIcon from '@/images/redux-icon.svg';
+import htmlIcon from '@/images/html-icon.svg';
+import cssIcon from '@/images/css-icon.svg';
+import tailwindIcon from '@/images/tailwind-css-icon.svg';
+import sassIcon from '@/images/sass-icon.svg';
+import wordpressIcon from '@/images/wordpress-icon.svg';
+import gitIcon from '@/images/git-icon.svg';
+import jqueryIcon from '@/images/jquery-icon.svg';
+import bootstrapIcon from '@/images/bootstrap-icon.svg';
+import antDesignIcon from '@/images/ant-design-icon.svg';
+import webpackIcon from '@/images/webpack-icon.svg';
+import bitbucketIcon from '@/images/bitbucket-icon.svg';
+import sourcetreeIcon from '@/images/sourcetree-icon.svg';
+import zohosprintsIcon from '@/images/zoho-icon.svg';
+import sketchIcon from '@/images/sketch-icon.svg';
 
 export const socialPlatforms = [
     { type: 'linkedin', icon: linkedIn, url: 'https://www.linkedin.com/in/keerthivasan-m-k-7a885a184/' },
     { type: 'github', icon: github, url: 'https://github.com/keerthivasanmk' },
     { type: 'mail', icon: mail, url: 'mailto:keerthikrishna66@gmail.com' },
-    { type: 'instagram', icon: instagram, url: 'https://www.instagram.com/vasan_kv/' }
+    // { type: 'instagram', icon: instagram, url: 'https://www.instagram.com/vasan_kv/' }
 ];
 
 export const techStack = [
