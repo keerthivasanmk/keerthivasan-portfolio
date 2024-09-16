@@ -55,7 +55,7 @@ export default function ContactUs () {
       </h2>
       <p className='tablet:text-sm'>
         I am always excited to work on any awesome projects. Message me and
-        let's discuss over coffee.
+        let&lsquo;s discuss over coffee.
       </p>
       <div className='flex w-full h-full items-center  tablet:flex-col-reverse'>
         <div className='p-5 w-1/2 flex flex-col items-center gap-7'>
