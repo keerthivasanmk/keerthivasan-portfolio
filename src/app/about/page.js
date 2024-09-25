@@ -24,7 +24,7 @@ export default function About () {
           />
           <SocialMedia />
         </div>
-        <div className='w-[2px] bg-[#496e6d] h-[80%]'></div>
+        <div className='w-[2px] bg-[#496e6d] h-[80%] tablet:hidden'></div>
         <div className='px-5 text-white about-main-content max-w-[600px] m-auto tablet:text-sm tablet:px-0'>
           <p>
             I&apos;m Keerthivasan, Skilled Frontend Developer with 3+ years of
