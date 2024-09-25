@@ -12,8 +12,6 @@ You can view the live portfolio here: [Portfolio Live](https://keerthivasan-one.
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
-## Getting Started
-
 ### Prerequisites
 
 Node.js (18.17.0 or above) installed.
