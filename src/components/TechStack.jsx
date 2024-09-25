@@ -8,7 +8,7 @@ export default function TechStack() {
             <div className='flex flex-wrap gap-y-10 font-medium items-center tablet:gap-6'>
                 {
                     techStack?.map((item, index) => (
-                        <div key={index} className='flex flex-col gap-3 items-center w-[calc(100%/7)]'>
+                        <div key={index} className='flex flex-col gap-3 items-center w-[calc(100%/7)] tablet:h-[100px]'>
                             <Image
                                 src={item?.image}
                                 alt={item?.name}
@@ -23,7 +23,7 @@ export default function TechStack() {
             <div className='flex flex-wrap gap-y-10 font-medium items-center tablet:gap-6'>
                 {
                     tools?.map((item, index) => (
-                        <div key={index} className='flex flex-col gap-3 items-center w-[calc(100%/7)]'>
+                        <div key={index} className='flex flex-col gap-3 items-center w-[calc(100%/7)] tablet:h-[100px]'>
                             <Image
                                 src={item?.image}
                                 alt={item?.name}
