@@ -18,32 +18,19 @@ export default function Projects() {
             <h2 className='title text-center'>Experience</h2>
             <div className="w-full h-full mb-5">
                 <h2 className='title-2 mb-5 underline tablet:text-lg'>Mallow Technologies</h2>
-                <h3 className='title-3 mb-2 tablet:text-base'>Developer <span className='text-white'>|</span> Apr 2023 to Feb 2024</h3>
+                <h3 className='title-3 mb-2 tablet:text-base'>Developer <span className='text-white'>|</span> Apr 2021 to Feb 2024</h3>
                 <ul className='list-disc list-inside text-white mb-5 tablet:text-sm'>
-                    <li>As a valuable contributor to the KwickMetrics team, I successfully developed and implemented various features, including Feedback automator and Product revamp UI.</li>
-                    <li>I leverage my expertise in UI design and logic to improve the overall UI and UX.</li>
-                    <li>https://demo.kwickmetrics.com.</li>
+                    <li>Developed high-performance, scalable, responsive applications using Next.js and React.</li>
+                    <li>Optimizing web applications for performance, reducing load times, and improving Core Web Vitals.</li>
+                    <li>Optimized frontend performance, achieving faster load times and improved UX.</li>
+                    <li>Mentoring interns and conducting code reviews to maintain high-quality standards.</li>
                 </ul>
-                <h3 className='title-3 mb-1 tablet:text-base'>Junior Developer <span className='text-white'>|</span> Apr 2022 to Mar 2023</h3>
+                <h2 className='title-2 mb-5 underline tablet:text-lg'>AOT Technologies</h2>
+                <h3 className='title-3 mb-2 tablet:text-base'>Software Engineer III <span className='text-white'>|</span> Apr 2024 to Present</h3>
                 <ul className='list-disc list-inside text-white mb-5 tablet:text-sm'>
-                    <li>Developed and launched the landing page for the Kwickmetrics app</li>
-                    <li>Took complete ownership of the project</li>
-                    <li>Collaborated seamlessly with the design team</li>
-                    <li>Implemented server side rendering (SSR) techniques</li>
-                    <li>Ensured responsiveness and browser compatability</li>
-                    <li>Visit the live project at www.kwickmetrics.com</li>
-                </ul>
-                <h3 className='title-3 mb-1 tablet:text-base'>Developer Trainee <span className='text-white'>|</span> Oct 2021 to Mar 2022</h3>
-                <ul className='list-disc list-inside text-white mb-5 tablet:text-sm'>
-                    <li>Developed a comprehensive documentation site</li>
-                    <li>Collaborated with content and design teams to extract valuable insights and content</li>
-                    <li>Ensured seamless user experience and accessibility</li>
-                </ul>
-                <h3 className='title-3 mb-1 tablet:text-base'>Developer Intern <span className='text-white'>|</span> Apr 2021 to Sept 2022</h3>
-                <ul className='list-disc list-inside text-white mb-5 tablet:text-sm'>
-                    <li>Developed a comprehensive documentation site</li>
-                    <li>Collaborated with content and design teams to extract valuable insights and content</li>
-                    <li>Ensured seamless user experience and accessibility</li>
+                <li>Developing full-stack applications with Vue.js, React.js, Node.js, and Next.js.</li>
+                <li>Implementing user analytics & event tracking using PostHog.</li>
+                    <li>Optimizing frontend performance for faster load times and enhanced user experience.</li>
                 </ul>
             </div>
             <TechStack/>
