@@ -18,10 +18,9 @@ module.exports = {
       boxShadow: {
         '3xl': '0 10px 21px -15px rgba(0, 0, 0, 0.3)'
       },
-
-    },
-    screens: {
-      'tablet': {'max': '768px'},
+      screens: {
+        'tablet': {'max': '768px'}
+      }
     }
   },
   plugins: []

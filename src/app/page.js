@@ -1,29 +1,21 @@
-// Dependencies
-import Image from 'next/image';
-
-// Images
-import authourImage from '@/images/authour.jpg';
+import HeroSection from '@/components/sections/HeroSection'
+import AboutSection from '@/components/sections/AboutSection'
+import ExperienceSection from '@/components/sections/ExperienceSection'
+import ProjectsSection from '@/components/sections/ProjectsSection'
+import SkillsSection from '@/components/sections/SkillsSection'
+import ContactSection from '@/components/sections/ContactSection'
+import FooterSection from '@/components/sections/FooterSection'
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center gap-5 child-container tablet:flex-col-reverse">
-      <div>
-        <span className='title tablet:text-xl'>HEY, I&apos;M KEERTHIVASAN</span>
-        <div className="font-bold text-xl mt-2 tablet:text-lg tablet:mt-0">FRONTEND DEVELOPER</div>
-        <ul className='my-2 text-white text-sm list-disc leading-7 list-inside'>
-          <li>Transforming Designs into Interactive Web Applications.</li>
-          <li>Crafting Engaging User Experiences.</li>
-          <li>Delivering High-Quality Code for Scalable Solutions. </li>
-        </ul>
-        <span className='font-bold mt-2 text-white bg-black px-2 py-1 rounded'>Let’s Make the Web. Faster 🚀</span>
-      </div>
-      <Image
-        src={authourImage}
-        alt="Keerthivasan"
-        width={250}
-        height={100}
-        className='rounded-full h-[250px]'
-      />
+    <div className='flex flex-col w-full'>
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <SkillsSection />
+      <ContactSection />
+      <FooterSection />
     </div>
-  );
+  )
 }
