@@ -2,9 +2,13 @@ import SocialMedia from './SocialMedia'
 
 export default function Footer () {
   return (
-    <div className='text-white mx-5 p-5 flex justify-between border-t-2 tablet:flex-col tablet:gap-2 tablet:text-sm	'>
-      Built with Next.js, Tailwind and Vercel
+    <footer className='text-white/90 mx-5 py-6 px-4 flex justify-between items-center border-t border-white/20 tablet:flex-col tablet:gap-4 tablet:text-center text-xs font-semibold'>
+      <div>
+        <span>© {new Date().getFullYear()} Keerthivasan. All rights reserved.</span>
+        <span className='mx-2 text-white/40'>|</span>
+        <span>Built with Next.js, Tailwind CSS &amp; Vercel</span>
+      </div>
       <SocialMedia />
-    </div>
+    </footer>
   )
 }

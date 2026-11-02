@@ -1,29 +1,32 @@
-// Dependencies
-import { Inter } from 'next/font/google'
-
 // Styles
 import './globals.css'
 
 // Components
 import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import SmoothScroll from '@/components/SmoothScroll'
 
 export const metadata = {
-  title: 'Keerthivasan - Frontend Developer',
-  description: "Keerthivasan's Portfolio"
+  title: 'Keerthivasan | Full Stack Developer (5+ Years)',
+  description: 'Full Stack Developer with 5+ years of experience specializing in React.js, Next.js, Node.js, TypeScript, and AWS cloud infrastructure.',
+  keywords: ['Full Stack Developer', 'React.js', 'Next.js', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'OpenTelemetry', 'Keerthivasan'],
+  authors: [{ name: 'Keerthivasan' }]
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1
 }
 
 export default function RootLayout ({ children }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} bg-primary-sky-blue text-black`}>
-        <Header />
-        <main className='py-5 px-16 relative min-h-[80vh] flex tablet:px-5'>
-          {children}
-        </main>
-        <Footer />
+      <body className='font-sans text-white min-h-screen flex flex-col antialiased selection:bg-emerald-400 selection:text-black'>
+        <SmoothScroll>
+          <Header />
+          <main className='flex-grow pt-20 pb-12 px-4 sm:px-8 max-w-6xl mx-auto w-full'>
+            {children}
+          </main>
+        </SmoothScroll>
       </body>
     </html>
   )
