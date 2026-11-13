@@ -33,7 +33,7 @@ export const personalInfo = {
     phone: '+91 8344803585',
     resumeUrl: '/Keerthivasan_resume.pdf',
     shortIntro: 'I build scalable, high-performance web applications and reliable backend services, with expertise in modern frontend technologies, cloud infrastructure, and end-to-end product development.',
-    mainTechnologies: ['React.js', 'Next.js', 'Node.js', 'TypeScript']
+    mainTechnologies: ['React.js', 'Next.js', 'Node.js', 'TypeScript', 'JavaScript']
 };
 
 export const socialPlatforms = [
@@ -138,16 +138,68 @@ export const workExperience = [
 ];
 
 // Note: Hootsuite and KwickMetrics are removed from projects per request, preserved in workExperience
+export const foodDeliveryEcosystem = [
+    {
+        id: 'customer-app',
+        title: 'Customer Web Application',
+        role: 'Consumer Ordering & Live Tracking Portal',
+        badge: 'Customer Facing',
+        overview: 'A responsive, high-performance customer ordering web application with dynamic restaurant menu exploration, dietary filter tags, interactive shopping cart, promo voucher applications, and real-time live order dispatch tracking.',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase Auth', 'Firestore', 'Vercel'],
+        liveUrl: 'https://food-delivery-customer.vercel.app',
+        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-customer',
+        highlights: [
+            'Instant search & dietary categorization',
+            'Dynamic multi-item cart with persistent state',
+            'Real-time order confirmation & step tracking',
+            'Mobile-first responsive UX with sub-second page loads'
+        ]
+    },
+    {
+        id: 'restaurant-portal',
+        title: 'Restaurant Partner Dashboard',
+        role: 'Vendor Catalog & Kitchen Pipeline Management',
+        badge: 'Restaurant Partner',
+        overview: 'An administration portal for partner restaurants and kitchen operators. Enables instant menu inventory updates, pricing adjustments, incoming live order queue processing (accept/prepare/ready), and sales revenue breakdowns.',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase', 'REST APIs', 'Vercel'],
+        liveUrl: 'https://food-delivery-restaurant.vercel.app',
+        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-restaurant',
+        highlights: [
+            'Live kitchen order pipeline with audio alerts',
+            'One-click menu item toggle & inventory control',
+            'Order preparation timeline dispatcher',
+            'Daily and weekly revenue analytics charts'
+        ]
+    },
+    {
+        id: 'delivery-partner-app',
+        title: 'Delivery Partner Application',
+        role: 'Real-time Driver Dispatch & Routing Portal',
+        badge: 'Delivery Partner',
+        overview: 'A driver-tailored portal providing instant order assignment notifications, pickup and customer address routing instructions, one-tap delivery milestone updates, and daily tip & earnings tracking.',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase Realtime DB', 'Geolocation API', 'Vercel'],
+        liveUrl: 'https://food-delivery-driver.vercel.app',
+        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-driver',
+        highlights: [
+            'Real-time order broadcast & acceptance workflow',
+            'Integrated GPS route directions & milestone triggers',
+            'Instant delivery confirmation with OTP/proof',
+            'Comprehensive earnings & completed rides log'
+        ]
+    }
+];
+
 export const projects = [
     {
         id: 'food-delivery-platform',
-        title: 'Food Delivery Platform',
-        subtitle: 'Multi-Role Real-Time Delivery Ecosystem',
-        type: 'Personal Project',
+        title: 'Food Delivery Platform Ecosystem',
+        subtitle: 'End-to-End Multi-Role Delivery Suite',
+        type: 'Personal Full Stack Project',
         overview: 'An end-to-end full-stack food delivery platform featuring distinct role-tailored applications for customer ordering, restaurant menu & order management, and real-time delivery partner tracking.',
         roleAndContributions: 'Engineered the complete application architecture from the ground up: dynamic cart state workflows, real-time order status dispatching, Firebase backend authentication and database synchronization, responsive analytics dashboards, and deployment on Vercel.',
         technologies: ['Next.js', 'React', 'Firebase', 'Vercel', 'Tailwind CSS', 'REST APIs'],
         image: 'https://images.openai.com/static-rsc-4/Q--s_WmPzBNsbWzao968SNR191piIDCoQb-7NBbgETyTIZxDxFSX0dZmZTOaFfkYN4rDtkXBD7KEjKrJ4v12WOkxxbjRP2BwY-bI89xrkH6BuRMIheqvfvw2l9CFT5xeH_IO7AF25TEb493RfLFLwuTBv95ICjae3BbWeVVLBeg?purpose=inline',
+        apps: foodDeliveryEcosystem,
         githubUrl: 'https://github.com/keerthivasanmk',
         isConfidential: false
     }

@@ -2,18 +2,18 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Cpu, Sparkles } from 'lucide-react'
+import { Cpu } from 'lucide-react'
 import { skillCategories } from '@/constants/constants'
 
 export default function SkillsSection() {
   return (
-    <section id='skills' className='py-20 border-t border-white/10'>
+    <section id='skills' className='scroll-mt-24 pt-12 pb-20 border-t border-white/10'>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6 }}
-        className='text-center mb-14'
+        className='text-center mb-12'
       >
         <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400 mb-3'>
           <Cpu className='w-3.5 h-3.5' />
