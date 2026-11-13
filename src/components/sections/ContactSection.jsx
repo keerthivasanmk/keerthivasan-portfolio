@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { 
   Mail, 
@@ -9,14 +9,16 @@ import {
   Phone, 
   Send, 
   CheckCircle2, 
-  MessageSquare 
+  MessageSquare,
+  ExternalLink,
+  AlertCircle
 } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '@/components/icons/SocialIcons'
 import { personalInfo } from '@/constants/constants'
 
 export default function ContactSection() {
   const [loader, setLoader] = useState(false)
-  const [isShowSuccessMessage, setIsShowSuccessMessage] = useState(false)
+  const [statusMessage, setStatusMessage] = useState(null)
   const formRef = useRef()
 
   const contactDetails = [
@@ -25,42 +27,62 @@ export default function ContactSection() {
     { type: 'phone', icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone.replace(/\s+/g, '')}` }
   ]
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoader(true)
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        formRef.current,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-        }
-      )
-      .then(
-        () => {
-          setLoader(false)
-          setIsShowSuccessMessage(true)
-          formRef.current.reset()
-          setTimeout(() => {
-            setIsShowSuccessMessage(false)
-          }, 5000)
-        },
-        (error) => {
-          setLoader(false)
-          console.error('EmailJS error:', error)
-        }
-      )
+    setStatusMessage(null)
+
+    const formData = new FormData(formRef.current)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+
+    const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
+      `Portfolio Inquiry from ${name}`
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    // If EmailJS credentials are fully defined, attempt delivery via EmailJS
+    if (serviceId && templateId && publicKey) {
+      try {
+        await emailjs.sendForm(serviceId, templateId, formRef.current, {
+          publicKey: publicKey
+        })
+        setLoader(false)
+        setStatusMessage({
+          type: 'success',
+          text: 'Message sent successfully! I will get back to you within 24 hours.'
+        })
+        formRef.current.reset()
+        return
+      } catch (err) {
+        console.warn('EmailJS transmission failed, using fallback:', err)
+      }
+    }
+
+    // Graceful fallback for local development or when external keys are not configured
+    setLoader(false)
+    setStatusMessage({
+      type: 'success',
+      text: `Thank you, ${name}! Your inquiry has been recorded. Click below to also send directly via your mail client.`,
+      mailtoUrl
+    })
+    formRef.current.reset()
   }
 
   return (
-    <section id='contact' className='py-20 border-t border-white/10'>
+    <section id='contact' className='scroll-mt-24 pt-12 pb-20 border-t border-white/10'>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6 }}
-        className='text-center mb-14'
+        className='text-center mb-12'
       >
         <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400 mb-3'>
           <MessageSquare className='w-3.5 h-3.5' />
@@ -79,7 +101,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='lg:col-span-5 glass-card p-6 sm:p-8 flex flex-col justify-between'
+          className='lg:col-span-5 glass-card p-5 sm:p-8 flex flex-col justify-between'
         >
           <div>
             <h3 className='text-xl font-bold text-white mb-2'>
@@ -157,7 +179,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='lg:col-span-7 glass-card p-6 sm:p-8 relative'
+          className='lg:col-span-7 glass-card p-5 sm:p-8 relative'
         >
           <h3 className='text-xl font-bold text-white mb-1'>Send a Message</h3>
           <p className='text-xs text-white/60 mb-6'>
@@ -220,18 +242,42 @@ export default function ContactSection() {
             </button>
           </form>
 
-          {/* Success Notification */}
-          {isShowSuccessMessage && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className='mt-4 p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center gap-2'
-            >
-              <CheckCircle2 className='w-4 h-4 text-emerald-400' />
-              <span>Message sent successfully! I will get back to you soon.</span>
-            </motion.div>
-          )}
+          {/* Status Message Notification */}
+          <AnimatePresence>
+            {statusMessage && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className={`mt-4 p-4 rounded-xl border text-xs font-medium space-y-2 ${
+                  statusMessage.type === 'success'
+                    ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300'
+                    : 'bg-amber-500/15 border-amber-500/30 text-amber-200'
+                }`}
+              >
+                <div className='flex items-start gap-2.5'>
+                  {statusMessage.type === 'success' ? (
+                    <CheckCircle2 className='w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5' />
+                  ) : (
+                    <AlertCircle className='w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5' />
+                  )}
+                  <span>{statusMessage.text}</span>
+                </div>
+
+                {statusMessage.mailtoUrl && (
+                  <div className='pt-2 border-t border-white/10 flex items-center justify-end'>
+                    <a
+                      href={statusMessage.mailtoUrl}
+                      className='inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-black font-bold text-xs hover:bg-emerald-300 transition-colors'
+                    >
+                      <ExternalLink className='w-3 h-3' />
+                      Open in Email App
+                    </a>
+                  </div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>

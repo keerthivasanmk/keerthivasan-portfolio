@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="16" fill="#232F3E"/>
-  <path d="M41.4 75.2c-7.9 0-14.8-1.7-20.7-5.1-.9-.5-1.1-1.6-.4-2.4l3.6-4.1c.6-.7 1.6-.9 2.4-.4 4.5 2.6 9.8 4 15.1 4 8.7 0 13.9-3.7 13.9-10.7 0-4.9-3-8.2-11.4-11.4-10.6-4.1-15.6-9.6-15.6-17.6 0-10.4 8.6-17.9 22.3-17.9 6.7 0 12.8 1.4 18.2 4.2.8.4 1.1 1.4.5 2.2l-3.3 4.5c-.5.7-1.5.9-2.3.5-4.1-2.2-8.5-3.3-13.1-3.3-8 0-12.7 3.9-12.7 9.8 0 4.6 3 7.8 10.9 10.8 11.2 4.2 16.3 9.4 16.3 18.1 0 11.5-8.8 18.8-23.7 18.8z" fill="#FFFFFF"/>
-  <path d="M22 93c26.3 14.8 59 13.3 84-4.5.9-.6 2.1-.1 2.2 1 .3 2.1-.2 4.3-1.6 5.8-23.5 19.3-58.8 19.1-85.9 2.2-1.3-.8-1-3.5 1.3-4.5z" fill="#FF9900"/>
-  <path d="M107.5 86.8c1.3 4.2-1.8 12.8-1.8 12.8s-7.5-3.3-8.8-7.5c-.8-2.6.4-4.1 2.8-4.4 2.4-.4 6.5-.4 7.8-.9z" fill="#FF9900"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" role="img" aria-label="Amazon Web Services">
+  <rect width="96" height="64" rx="10" fill="#101E2A"/>
+  <text x="48" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#F9FAFB">aws</text>
+  <path d="M19 43c18 11 42 12 61-1" fill="none" stroke="#FF9900" stroke-width="4" stroke-linecap="round"/>
+  <path d="m72 39 9 2-4 8" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

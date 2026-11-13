@@ -104,3 +104,69 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+/* Hero Circular Orbit & Floating Tech Icons */
+.orbit {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px dashed rgba(45, 230, 180, 0.5);
+  border-radius: 50%;
+  animation: orbit-rotate 25s linear infinite;
+  pointer-events: none;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #21cfa4;
+  box-shadow: 0 0 10px #21cfa4, 0 0 16px rgba(33, 207, 164, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+.tech-icon {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #102b32;
+  border: 1px solid #21cfa4;
+  box-shadow: 0 0 22px rgba(0, 220, 160, 0.2);
+  animation: icon-float 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.15);
+  border-color: #34d399;
+  box-shadow: 0 0 28px rgba(52, 211, 153, 0.5);
+}
+
+@keyframes orbit-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes icon-float {
+  0%, 100% { 
+    transform: translateY(0); 
+    translate: 0 0;
+  }
+  50% { 
+    transform: translateY(-8px); 
+    translate: 0 -8px; 
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit, .tech-icon {
+    animation: none;
+  }
+}
