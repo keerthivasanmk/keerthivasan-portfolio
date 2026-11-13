@@ -8,8 +8,7 @@ import {
   ShieldCheck, 
   GraduationCap, 
   Award, 
-  Layers, 
-  CheckCircle2 
+  Layers 
 } from 'lucide-react'
 import { certifications, education } from '@/constants/constants'
 
@@ -22,7 +21,7 @@ export default function AboutSection() {
     },
     {
       title: 'Cloud Infrastructure & DevOps',
-      desc: 'Hands-on AWS deployments using ECR, EBS, S3, automated CI/CD workflows, and containerized Docker environments.',
+      desc: 'Hands-on AWS deployments using ECR, EBS, S3, and containerized Docker environments.',
       icon: Cloud
     },
     {
@@ -38,13 +37,13 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id='about' className='py-20 border-t border-white/10'>
+    <section id='about' className='scroll-mt-24 pt-12 pb-20 border-t border-white/10'>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6 }}
-        className='text-center mb-14'
+        className='text-center mb-12'
       >
         <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400 mb-3'>
           <User className='w-3.5 h-3.5' />
@@ -64,7 +63,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='lg:col-span-7 glass-card p-8 flex flex-col justify-between'
+          className='lg:col-span-7 glass-card p-5 sm:p-8 flex flex-col justify-between'
         >
           <div>
             <h3 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
@@ -84,7 +83,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className='pt-6 mt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center'>
+          <div className='pt-6 mt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 text-center'>
             <div className='p-3 rounded-xl bg-white/5 border border-white/10'>
               <div className='text-2xl font-black text-emerald-400'>5+</div>
               <div className='text-[11px] text-white/60 font-medium mt-0.5'>Years Exp.</div>
