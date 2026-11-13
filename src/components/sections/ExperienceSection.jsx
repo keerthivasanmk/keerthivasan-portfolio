@@ -23,13 +23,13 @@ export default function ExperienceSection() {
   }
 
   return (
-    <section id='experience' className='py-20 border-t border-white/10'>
+    <section id='experience' className='scroll-mt-24 pt-12 pb-20 border-t border-white/10'>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6 }}
-        className='text-center mb-14'
+        className='text-center mb-12'
       >
         <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400 mb-3'>
           <Briefcase className='w-3.5 h-3.5' />
@@ -71,7 +71,7 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Experience Card */}
-                <div className='glass-card p-6 sm:p-7 hover:border-white/20 transition-all duration-300'>
+                <div className='glass-card p-5 sm:p-7 hover:border-white/20 transition-all duration-300'>
                   {/* Top Bar: Company, Client, Period */}
                   <div className='flex flex-wrap items-start justify-between gap-4 pb-4 border-b border-white/10'>
                     <div>

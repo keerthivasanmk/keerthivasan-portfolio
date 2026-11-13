@@ -11,7 +11,7 @@ import {
   Mail, 
   FileDown, 
   Menu, 
-  X 
+  X
 } from 'lucide-react'
 import { personalInfo } from '@/constants/constants'
 
@@ -26,16 +26,13 @@ const navItems = [
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('hero')
-  const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Track scroll position for header elevation and active section
+  // Track scroll position to update active section with ideal threshold
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30)
-
       const sectionElements = navItems.map((item) => document.getElementById(item.id))
-      const scrollPosition = window.scrollY + 200
+      const scrollPosition = window.scrollY + 140
 
       for (let i = sectionElements.length - 1; i >= 0; i--) {
         const el = sectionElements[i]
@@ -56,22 +53,25 @@ export default function Header() {
     const element = document.getElementById(id)
     if (!element) return
 
+    // Offset -25 ensures section title sits comfortably with breathing room below navbar
     if (window.__lenis) {
-      window.__lenis.scrollTo(element, { offset: -70 })
+      window.__lenis.scrollTo(element, { offset: -25 })
     } else {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const yOffset = -80
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
   return (
     <>
       <header className='fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 max-w-6xl mx-auto pointer-events-none'>
-        {/* Brand / Logo with status dot */}
+        {/* Brand / Logo */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className='pointer-events-auto flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-black/60 backdrop-blur-xl border border-white/15 shadow-xl text-white'
+          className='pointer-events-auto flex items-center px-4 py-2 rounded-full bg-black/60 backdrop-blur-xl border border-white/15 shadow-xl text-white'
         >
           <button
             onClick={() => scrollToSection('hero')}
@@ -79,14 +79,6 @@ export default function Header() {
           >
             KEERTHI<span className='text-emerald-400'>.</span>
           </button>
-          
-          <div className='hidden sm:flex items-center gap-1.5 pl-2 border-l border-white/20 text-[11px] font-semibold text-white/90'>
-            <span className='relative flex h-2 w-2'>
-              <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75'></span>
-              <span className='relative inline-flex rounded-full h-2 w-2 bg-emerald-500'></span>
-            </span>
-            <span>Available for Hire</span>
-          </div>
         </motion.div>
 
         {/* Center Floating Dock / Pill Navbar (Desktop) */}
@@ -133,7 +125,7 @@ export default function Header() {
             href={personalInfo.resumeUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className='hidden sm:inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white border border-white transition-all shadow-xl duration-200'
+            className='inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white border border-white transition-all shadow-xl duration-200'
           >
             <FileDown className='w-3.5 h-3.5' />
             Resume
@@ -180,13 +172,12 @@ export default function Header() {
                 )
               })}
 
-              <div className='pt-2 mt-2 border-t border-white/15 flex items-center justify-between'>
-                <span className='text-xs text-white/70'>5+ Years Experience</span>
+              <div className='pt-2 mt-2 border-t border-white/15 flex items-center justify-end'>
                 <a
                   href={personalInfo.resumeUrl}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-white text-black'
+                  className='inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full bg-white text-black'
                 >
                   <FileDown className='w-3.5 h-3.5' />
                   Resume

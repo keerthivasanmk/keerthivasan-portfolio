@@ -4,6 +4,7 @@ import './globals.css'
 // Components
 import Header from '@/components/Header'
 import SmoothScroll from '@/components/SmoothScroll'
+import AiChatbot from '@/components/AiChatbot'
 
 export const metadata = {
   title: 'Keerthivasan | Full Stack Developer (5+ Years)',
@@ -26,6 +27,7 @@ export default function RootLayout ({ children }) {
           <main className='flex-grow pt-20 pb-12 px-4 sm:px-8 max-w-6xl mx-auto w-full'>
             {children}
           </main>
+          <AiChatbot />
         </SmoothScroll>
       </body>
     </html>
