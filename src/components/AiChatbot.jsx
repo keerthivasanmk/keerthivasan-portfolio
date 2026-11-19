@@ -418,7 +418,7 @@ export default function AiChatbot() {
       const el = document.getElementById(action.targetId)
       if (el) {
         if (window.__lenis) {
-          window.__lenis.scrollTo(el, { offset: -25 })
+          window.__lenis.scrollTo(el, { offset: 0 })
         } else {
           el.scrollIntoView({ behavior: 'smooth' })
         }

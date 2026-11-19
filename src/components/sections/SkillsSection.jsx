@@ -7,7 +7,7 @@ import { skillCategories } from '@/constants/constants'
 
 export default function SkillsSection() {
   return (
-    <section id='skills' className='scroll-mt-24 pt-12 pb-20 border-t border-white/10'>
+    <section id='skills' className='pt-20 sm:pt-24 pb-20 border-t border-white/10'>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

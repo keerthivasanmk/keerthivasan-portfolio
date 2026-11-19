@@ -106,7 +106,7 @@ export const skillCategories = [
 export const workExperience = [
     {
         company: 'AOT Technologies',
-        client: 'Hootsuite',
+        // client: 'Hootsuite',
         role: 'Full Stack Developer',
         period: 'Apr 2024 – Present',
         isCurrent: true,
@@ -122,7 +122,7 @@ export const workExperience = [
     },
     {
         company: 'Mallow Technologies',
-        client: 'KwickMetrics',
+        // client: 'KwickMetrics',
         role: 'Frontend Developer',
         period: 'Apr 2021 – Mar 2024',
         isCurrent: false,
@@ -146,8 +146,8 @@ export const foodDeliveryEcosystem = [
         badge: 'Customer Facing',
         overview: 'A responsive, high-performance customer ordering web application with dynamic restaurant menu exploration, dietary filter tags, interactive shopping cart, promo voucher applications, and real-time live order dispatch tracking.',
         technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase Auth', 'Firestore', 'Vercel'],
-        liveUrl: 'https://food-delivery-customer.vercel.app',
-        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-customer',
+        liveUrl: 'https://customer-app-three-dun.vercel.app/',
+        githubUrl: 'https://github.com/keerthivasanmk/customer-app',
         highlights: [
             'Instant search & dietary categorization',
             'Dynamic multi-item cart with persistent state',
@@ -162,8 +162,8 @@ export const foodDeliveryEcosystem = [
         badge: 'Restaurant Partner',
         overview: 'An administration portal for partner restaurants and kitchen operators. Enables instant menu inventory updates, pricing adjustments, incoming live order queue processing (accept/prepare/ready), and sales revenue breakdowns.',
         technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase', 'REST APIs', 'Vercel'],
-        liveUrl: 'https://food-delivery-restaurant.vercel.app',
-        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-restaurant',
+        liveUrl: 'https://restaurant-app-lemon-eta.vercel.app/',
+        githubUrl: 'https://github.com/keerthivasanmk/restaurant-app',
         highlights: [
             'Live kitchen order pipeline with audio alerts',
             'One-click menu item toggle & inventory control',
@@ -178,14 +178,25 @@ export const foodDeliveryEcosystem = [
         badge: 'Delivery Partner',
         overview: 'A driver-tailored portal providing instant order assignment notifications, pickup and customer address routing instructions, one-tap delivery milestone updates, and daily tip & earnings tracking.',
         technologies: ['Next.js', 'React', 'Tailwind CSS', 'Firebase Realtime DB', 'Geolocation API', 'Vercel'],
-        liveUrl: 'https://food-delivery-driver.vercel.app',
-        githubUrl: 'https://github.com/keerthivasanmk/food-delivery-driver',
+        liveUrl: 'https://delivery-partner-app-ten.vercel.app/',
+        githubUrl: 'https://github.com/keerthivasanmk/delivery-partner-app',
         highlights: [
             'Real-time order broadcast & acceptance workflow',
             'Integrated GPS route directions & milestone triggers',
             'Instant delivery confirmation with OTP/proof',
             'Comprehensive earnings & completed rides log'
         ]
+    }
+];
+
+export const moreProjects = [
+    {
+        id: 'ai-chatbot-assistant',
+        title: 'AI Chatbot Assistant',
+        subtitle: 'Intelligent Conversational Agent',
+        description: 'An AI-powered conversational web application with dynamic prompt engineering, real-time message streams, chat history context, and responsive dark-mode UI.',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'AI/LLM', 'REST APIs', 'Vercel'],
+        githubUrl: 'https://github.com/keerthivasanmk/my-ai-chat-app'
     }
 ];
 

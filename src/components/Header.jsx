@@ -50,15 +50,24 @@ export default function Header() {
 
   const scrollToSection = (id) => {
     setMobileMenuOpen(false)
+
+    if (id === 'hero') {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0)
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+      return
+    }
+
     const element = document.getElementById(id)
     if (!element) return
 
-    // Offset -25 ensures section title sits comfortably with breathing room below navbar
+    // Offset 0 scrolls element top flush to viewport top so previous section is fully hidden
     if (window.__lenis) {
-      window.__lenis.scrollTo(element, { offset: -25 })
+      window.__lenis.scrollTo(element, { offset: 0 })
     } else {
-      const yOffset = -80
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      const y = element.getBoundingClientRect().top + window.pageYOffset
       window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
