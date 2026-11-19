@@ -35,7 +35,6 @@ export default function ProjectsSection() {
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.6 }}
         className='text-center mb-12'
-        className='text-center mb-12'
       >
         <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-emerald-400 mb-3'>
           <FolderGit2 className='w-3.5 h-3.5' />
