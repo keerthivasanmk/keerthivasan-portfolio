@@ -16,16 +16,15 @@ export default function HeroSection() {
     const el = document.getElementById(id)
     if (!el) return
     if (window.__lenis) {
-      window.__lenis.scrollTo(el, { offset: -25 })
+      window.__lenis.scrollTo(el, { offset: 0 })
     } else {
-      const yOffset = -80
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset
+      const y = el.getBoundingClientRect().top + window.pageYOffset
       window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
   return (
-    <section id='hero' className='scroll-mt-24 min-h-[85vh] flex items-center justify-between gap-8 lg:gap-12 flex-col-reverse lg:flex-row py-8 sm:py-14 overflow-hidden'>
+    <section id='hero' className='min-h-[85vh] flex items-center justify-between gap-8 lg:gap-12 flex-col-reverse lg:flex-row py-8 sm:py-14 overflow-hidden'>
       {/* Left Column: Headline, Bio & Action Controls */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
