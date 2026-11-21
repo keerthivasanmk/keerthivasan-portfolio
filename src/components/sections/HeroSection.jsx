@@ -55,7 +55,7 @@ export default function HeroSection() {
 
         {/* Short Introduction Quote */}
         <p className='text-base sm:text-lg text-white/75 leading-relaxed mb-7 font-normal max-w-xl'>
-          &ldquo;{personalInfo.shortIntro}&rdquo;
+          {personalInfo.shortIntro}
         </p>
 
         {/* Core Technologies Badges */}

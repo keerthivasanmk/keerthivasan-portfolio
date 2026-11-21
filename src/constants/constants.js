@@ -32,7 +32,7 @@ export const personalInfo = {
     email: 'keerthikrishna66@gmail.com',
     phone: '+91 8344803585',
     resumeUrl: '/Keerthivasan_resume.pdf',
-    shortIntro: 'I build scalable, high-performance web applications and reliable backend services, with expertise in modern frontend technologies, cloud infrastructure, and end-to-end product development.',
+    shortIntro: 'Building modern web experiences with React, Node.js, and cloud technologies.',
     mainTechnologies: ['React.js', 'Next.js', 'Node.js', 'TypeScript', 'JavaScript']
 };
 
