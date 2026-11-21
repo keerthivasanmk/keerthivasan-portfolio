@@ -66,16 +66,13 @@ export const skillCategories = [
         category: 'Backend',
         skills: [
             { name: 'Node.js', icon: nodejsIcon },
-            { name: 'REST APIs', icon: nextjsIcon }
+            { name: 'REST APIs', icon: webpackIcon }
         ]
     },
     {
         category: 'Cloud & DevOps',
         skills: [
-            { name: 'AWS', icon: awsIcon },
-            { name: 'ECR', icon: awsIcon },
-            { name: 'EBS', icon: awsIcon },
-            { name: 'S3', icon: awsIcon },
+            { name: 'AWS Cloud', icon: awsIcon },
             { name: 'Docker', icon: dockerIcon }
         ]
     },
@@ -137,7 +134,7 @@ export const workExperience = [
     }
 ];
 
-// Note: Hootsuite and KwickMetrics are removed from projects per request, preserved in workExperience
+// Food delivery sub-applications ecosystem
 export const foodDeliveryEcosystem = [
     {
         id: 'customer-app',
@@ -189,32 +186,43 @@ export const foodDeliveryEcosystem = [
     }
 ];
 
-export const moreProjects = [
-    {
-        id: 'ai-chatbot-assistant',
-        title: 'AI Chatbot Assistant',
-        subtitle: 'Intelligent Conversational Agent',
-        description: 'An AI-powered conversational web application with dynamic prompt engineering, real-time message streams, chat history context, and responsive dark-mode UI.',
-        technologies: ['Next.js', 'React', 'Tailwind CSS', 'AI/LLM', 'REST APIs', 'Vercel'],
-        githubUrl: 'https://github.com/keerthivasanmk/my-ai-chat-app'
-    }
-];
-
+// Unified, future-proof projects registry. Simply add new project objects here!
 export const projects = [
     {
         id: 'food-delivery-platform',
         title: 'Food Delivery Platform Ecosystem',
         subtitle: 'End-to-End Multi-Role Delivery Suite',
         type: 'Personal Full Stack Project',
+        category: 'Full Stack',
         overview: 'An end-to-end full-stack food delivery platform featuring distinct role-tailored applications for customer ordering, restaurant menu & order management, and real-time delivery partner tracking.',
         roleAndContributions: 'Engineered the complete application architecture from the ground up: dynamic cart state workflows, real-time order status dispatching, Firebase backend authentication and database synchronization, responsive analytics dashboards, and deployment on Vercel.',
         technologies: ['Next.js', 'React', 'Firebase', 'Vercel', 'Tailwind CSS', 'REST APIs'],
-        image: 'https://images.openai.com/static-rsc-4/Q--s_WmPzBNsbWzao968SNR191piIDCoQb-7NBbgETyTIZxDxFSX0dZmZTOaFfkYN4rDtkXBD7KEjKrJ4v12WOkxxbjRP2BwY-bI89xrkH6BuRMIheqvfvw2l9CFT5xeH_IO7AF25TEb493RfLFLwuTBv95ICjae3BbWeVVLBeg?purpose=inline',
         apps: foodDeliveryEcosystem,
-        githubUrl: 'https://github.com/keerthivasanmk',
-        isConfidential: false
+        githubUrl: null, // Omitted per design request
+        liveUrl: 'https://customer-app-three-dun.vercel.app/'
+    },
+    {
+        id: 'ai-chatbot-assistant',
+        title: 'AI Chatbot Assistant',
+        subtitle: 'Interactive Conversational Agent',
+        type: 'AI & Web Application',
+        category: 'AI & LLM',
+        overview: 'An AI-powered conversational web application with dynamic prompt engineering, real-time message streaming, multi-turn chat history context, and responsive dark-mode UI.',
+        roleAndContributions: 'Engineered with streaming LLM token delivery, modular persona switching, semantic portfolio knowledge retrieval, and persistent chat state management.',
+        technologies: ['Next.js', 'React', 'Tailwind CSS', 'AI/LLM', 'REST APIs', 'Vercel'],
+        githubUrl: 'https://github.com/keerthivasanmk/my-ai-chat-app',
+        liveUrl: 'https://ai-chat-app-puce-alpha.vercel.app/',
+        highlights: [
+            'Real-time streaming natural language token responses',
+            'Multi-turn conversation context & memory retention',
+            'Semantic portfolio knowledge retrieval & persona prompting',
+            'Responsive glassmorphism dark-mode conversational UI'
+        ]
     }
 ];
+
+// Backward-compatibility export
+export const moreProjects = projects.filter(p => p.id !== 'food-delivery-platform');
 
 export const certifications = [
     {

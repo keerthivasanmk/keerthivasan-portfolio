@@ -99,13 +99,6 @@ export default function HeroSection() {
             <ArrowRight className='w-4 h-4' />
           </button>
 
-          <button
-            onClick={() => scrollTo('contact')}
-            className='whitespace-nowrap px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold text-xs sm:text-sm transition-all duration-200 flex items-center gap-2'
-          >
-            <Mail className='w-4 h-4' />
-            Contact Me
-          </button>
         </div>
 
         {/* Social Profile Buttons */}
